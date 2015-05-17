@@ -16,6 +16,7 @@ nmap <S-L> <Esc>:tabn<CR>
 
 " Syntax and highlighting
 set bg=dark
+colorscheme slate
 set hlsearch
 set nu
 syntax on
@@ -38,43 +39,42 @@ nmap <F2> <Esc>:echo @%<CR>
 "::-----------------------
 ":: Eclim
 "::-----------------------
-
 filetype plugin indent on
+
 
 "::-----------------------
 ":: Pathogen
 "::-----------------------
-
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+
 
 "::-----------------------
 ":: Clang Complete
 "::-----------------------
-
 let g:clang_library_path= "/usr/lib/llvm-3.4/lib/libclang.so.1"
 
 let g:clang_snippets = 1
 let g:clang_snippets_engine = 'clang_complete'
 
+
 "::-----------------------
 ":: Nerdtree
 "::-----------------------
-
 autocmd VimEnter * NERDTreeCWD
 autocmd VimEnter * NERDTreeToggle
 nmap <F3> <Esc>:NERDTreeToggle<CR>
 
+
 "::-----------------------
 ":: YouCompleteMe
 "::-----------------------
-
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
 
 "::-----------------------
 ":: NeoComplete
 "::-----------------------
-
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -163,7 +163,6 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "::-----------------------
 ":: NeoSnippet
 "::-----------------------
-
 let g:neosnippet#snippets_directory='~/.vim/snippets/neosnippet-snippets/neosnippets'
 
 " Plugin key-mappings.
@@ -185,12 +184,9 @@ if has('conceal')
 endif
 
 
-
-
 "::-----------------------
 ":: Airline Status Bar
 "::-----------------------
-
 let g:airline_section_b = '%{strftime("%c")}'
 let g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline#extensions#tabline#enabled = 1
