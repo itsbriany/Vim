@@ -222,3 +222,39 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline_symbols.space = "\ua0"
 
+
+"::-----------------------
+":: Powerline Status Bar
+"::-----------------------
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+"
+" " Use 256 colours (Use this setting only if your terminal supports 256
+" colours)
+set t_Co=256
+
+" These lines setup the environment to show graphics and colors correctly.
+ set nocompatible
+  
+ let g:minBufExplForceSyntaxEnable = 1
+ python from powerline.vim import setup as powerline_setup
+ python powerline_setup()
+ python del powerline_setup
+  
+  if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+    augroup END
+  endif
+
+  set laststatus=2 " Always display the statusline in all windows
+  set guifont=Inconsolata\ for\ Powerline:h14
+  set noshowmode " Hide the default mode text
+
+
+

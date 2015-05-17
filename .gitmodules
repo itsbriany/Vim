@@ -19,3 +19,9 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/tmux-powerline"]
+	path = .vim/bundle/tmux-powerline
+	url = https://github.com/erikw/tmux-powerline.git
+[submodule ".vim/bundle/powerline"]
+	path = .vim/bundle/powerline
+	url = https://github.com/powerline/powerline.git
