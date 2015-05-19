@@ -8,7 +8,7 @@ set softtabstop=0
 set expandtab "Tabs as spaces
 set shiftwidth=2
 "set smartindent
-set autoindent 
+"set autoindent 
 nmap <Tab> <Esc>:cn<CR>
 nmap <S-Tab> <Esc>:cp<CR>
 nmap <S-H> <Esc>:tabp<CR>
