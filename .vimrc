@@ -46,7 +46,13 @@ filetype plugin indent on
 ":: Pathogen
 "::-----------------------
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
 
 
 "::-----------------------
