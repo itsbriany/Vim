@@ -7,6 +7,7 @@ set softtabstop=0
 "set noexpandtab 
 set expandtab "Tabs as spaces
 set shiftwidth=2
+set backspace=2
 "set smartindent
 "set autoindent 
 nmap <Tab> <Esc>:cn<CR>
@@ -263,4 +264,9 @@ set t_Co=256
   set noshowmode " Hide the default mode text
 
 
+"::-----------------------
+":: Python mode
+"::-----------------------
 
+let g:pymode = 1
+let mapleader="," " For quickly running the code
