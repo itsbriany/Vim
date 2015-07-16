@@ -16,7 +16,7 @@ nmap <S-H> <Esc>:tabp<CR>
 nmap <S-L> <Esc>:tabn<CR>
 
 " Syntax and highlighting
-set bg=dark
+set bg=light
 colorscheme slate
 set hlsearch
 set nu
@@ -28,6 +28,7 @@ set t_Co=256
 
 " Convenience Keymapping
 imap <C-F> <Esc>
+map <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
 " Echo the filename
 nmap <F2> <Esc>:echo @%<CR> 
@@ -55,6 +56,12 @@ call pathogen#helptags()
 filetype plugin indent on
 syntax on
 
+
+"::-----------------------
+":: TagList
+"::-----------------------
+
+nmap <F4> <Esc>:TlistToggle<Esc>
 
 "::-----------------------
 ":: Clang Complete
