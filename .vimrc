@@ -3,11 +3,12 @@ nmap <C-right> <Esc>:tabn<CR>
 
 " Tabs and indentation
 set tabstop=2
-set softtabstop=0
+set softtabstop=2
 "set noexpandtab 
 set expandtab "Tabs as spaces
 set shiftwidth=2
 set backspace=2
+set textwidth=78
 "set smartindent
 "set autoindent 
 nmap <Tab> <Esc>:cn<CR>
@@ -21,6 +22,10 @@ colorscheme slate
 set hlsearch
 set nu
 syntax on
+
+" Highlight spaces at EOL and mixed tabs and spaces.
+hi BogusWhitespace ctermbg=darkgreen guibg=darkgreen
+match BogusWhitespace /\s\+$\|^\t\+ \+\|^ \+\t\+/
 
 " Statusline and 256 colors
 set laststatus=2
