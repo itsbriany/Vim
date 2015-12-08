@@ -33,7 +33,7 @@ set t_Co=256
 
 " Convenience Keymapping
 imap <C-F> <Esc>
-map <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+map <F5> :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
 
 " Echo the filename
 nmap <F2> <Esc>:echo @%<CR> 
