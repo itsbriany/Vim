@@ -78,14 +78,6 @@ let g:clang_snippets_engine = 'clang_complete'
 
 
 "::-----------------------
-":: Nerdtree
-"::-----------------------
-autocmd VimEnter * NERDTreeCWD
-autocmd VimEnter * NERDTreeToggle
-nmap <F3> <Esc>:NERDTreeToggle<CR>
-
-
-"::-----------------------
 ":: YouCompleteMe
 "::-----------------------
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
