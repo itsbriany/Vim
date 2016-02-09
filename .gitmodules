@@ -18,7 +18,7 @@
 	url = https://github.com/Shougo/neosnippet-snippets.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+	url = git@github.com:scrooloose/nerdtree.git
 [submodule ".vim/bundle/tmux-powerline"]
 	path = .vim/bundle/tmux-powerline
 	url = https://github.com/erikw/tmux-powerline.git
