@@ -9,8 +9,8 @@ set expandtab "Tabs as spaces
 set shiftwidth=2
 set backspace=2
 set textwidth=78
-"set smartindent
-"set autoindent 
+set smartindent
+set autoindent 
 nmap <Tab> <Esc>:cn<CR>
 nmap <S-Tab> <Esc>:cp<CR>
 nmap <S-H> <Esc>:tabp<CR>
