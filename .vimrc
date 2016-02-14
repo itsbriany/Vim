@@ -18,7 +18,7 @@ nmap <S-L> <Esc>:tabn<CR>
 
 " Syntax and highlighting
 set bg=light
-colorscheme slate
+colorscheme ego
 set hlsearch
 set nu
 syntax on
@@ -206,7 +206,10 @@ endif
 "::-----------------------
 ":: Powerline Status Bar
 "::-----------------------
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"---- LINUX -------
+"set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"---- MAC OSX -----
+set rtp+=$HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
 " Always show statusline
 set laststatus=2
@@ -247,9 +250,9 @@ let mapleader="," " For quickly running the code
 "::-----------------------
 ":: Syntastic
 "::-----------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -257,7 +260,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['jshint']
-
 "::-----------------------
 ":: JavaScript Libraries Syntax
 "::-----------------------
