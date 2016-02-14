@@ -44,6 +44,13 @@ nmap <F2> <Esc>:echo @%<CR>
 "______________________________
 
 "::-----------------------
+":: NERDTree
+"::-----------------------
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+"::-----------------------
 ":: Eclim
 "::-----------------------
 filetype plugin indent on
@@ -174,6 +181,7 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "::-----------------------
 ":: NeoSnippet
 "::-----------------------
+let g:neosnippet#disable_runtime_snippets = { "_": 1, }
 let g:neosnippet#snippets_directory='~/.vim/snippets/neosnippet-snippets/neosnippets'
 
 " Plugin key-mappings.
@@ -232,6 +240,25 @@ set t_Co=256
 "::-----------------------
 ":: Python mode
 "::-----------------------
-
 let g:pymode = 1
 let mapleader="," " For quickly running the code
+
+
+"::-----------------------
+":: Syntastic
+"::-----------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['jshint']
+
+"::-----------------------
+":: JavaScript Libraries Syntax
+"::-----------------------
+let g:used_javascript_libs = 'underscore,jquery,angularjs,angularuirouter'
