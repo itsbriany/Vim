@@ -2,23 +2,23 @@ nmap <C-left> <Esc>:tabp<CR>
 nmap <C-right> <Esc>:tabn<CR>
 
 " Tabs and indentation
-set tabstop=2
-set softtabstop=2
-"set noexpandtab 
+set tabstop=4
+set softtabstop=4
+"set noexpandtab
 set expandtab "Tabs as spaces
-set shiftwidth=2
+set shiftwidth=4
 set backspace=2
 set textwidth=78
 set smartindent
-set autoindent 
+set autoindent
 nmap <Tab> <Esc>:cn<CR>
 nmap <S-Tab> <Esc>:cp<CR>
 nmap <S-H> <Esc>:tabp<CR>
 nmap <S-L> <Esc>:tabn<CR>
 
 " Syntax and highlighting
-set bg=light
-colorscheme ego
+set bg=dark
+colorscheme slate
 set hlsearch
 set nu
 syntax on
@@ -31,13 +31,16 @@ match BogusWhitespace /\s\+$\|^\t\+ \+\|^ \+\t\+/
 set laststatus=2
 set t_Co=256
 
-" Convenience Keymapping
+" Convenience Keymapping & C/C++ ctags
 imap <C-F> <Esc>
-map <F5> :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
+map <F5> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
 
 " Echo the filename
-nmap <F2> <Esc>:echo @%<CR> 
+nmap <F2> <Esc>:echo @%<CR>
 
+" No trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
 
 "______________________________
 " Plugins
@@ -220,12 +223,12 @@ set t_Co=256
 
 " These lines setup the environment to show graphics and colors correctly.
  set nocompatible
-  
+
  let g:minBufExplForceSyntaxEnable = 1
  python from powerline.vim import setup as powerline_setup
  python powerline_setup()
  python del powerline_setup
-  
+
   if ! has('gui_running')
     set ttimeoutlen=10
     augroup FastEscape
@@ -243,7 +246,7 @@ set t_Co=256
 "::-----------------------
 ":: Python mode
 "::-----------------------
-let g:pymode = 1
+"let g:pymode = 1
 let mapleader="," " For quickly running the code
 
 
@@ -260,7 +263,16 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_tidy_blocklevel_tags = ['ui-view']
+
 "::-----------------------
 ":: JavaScript Libraries Syntax
 "::-----------------------
 let g:used_javascript_libs = 'underscore,jquery,angularjs,angularuirouter'
+
+
+"::-----------------------
+":: Angular Vim
+"::-----------------------
+let g:angular_source_directory = 'app/src'
+let g:angular_test_directory = 'test/units'

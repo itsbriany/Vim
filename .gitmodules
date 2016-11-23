@@ -76,3 +76,6 @@
 [submodule ".vim/bundle/indentLine"]
 	path = .vim/bundle/indentLine
 	url = git@github.com:Yggdroot/indentLine.git
+[submodule ".vim/bundle/vim-sleuth"]
+	path = .vim/bundle/vim-sleuth
+	url = git@github.com:tpope/vim-sleuth.git
